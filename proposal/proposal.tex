@@ -552,7 +552,11 @@ The new Chromecast uses multicast Domain Name System (mDNS) for discovery purpos
 \section{Timeline of Implementation Milestones}
 
 \section{Evaluation Metrics}
+We will evaluate the success of our project using standard machine learning evaluation metrics because we plan to attempt to differentiate different types of web traffic using a Naive Bayes classifier. As such, we will train the model on a training dataset and measure both precision and recall of a test set. For stronger analysis, we will perform crossvalidation by running our classifier multiple times on different training and test sets.
 
+We will perform separate evaluation for multiple granularities. For example, we may evaluate whether we can distinguish broad categories of content like streaming video via native apps vs. streaming video through casting the whole screen vs. casting the whole screen with non-video content. We may also evaluate whether we can make more fine-grained distinctions such as determining if video content is from Youtube or Netflix.
+
+We will also perform separate analysis for each type of attack tried at each granularity. If time permits, we will attempt to identify traffic from one particular Chromecast when multiple devices are on the same network. This will be evaluated separately from the single Chromecast on a network scenario.
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.13)  14 FEB 2016 17:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.13)  14 FEB 2016 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -109,8 +109,17 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 351.
 LaTeX Font Info:    ... okay on input line 351.
 
 ** ATTENTION: Overriding command lockouts (line 403).
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 600.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 600.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 600.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-Underfull \hbox (badness 10000) in paragraph at lines 598--599
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
 []\OT1/ptm/m/n/8 http://www.bishopfox.com/blog/2014/07/rickmote-controller-hack
 ing-
  []
@@ -126,30 +135,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 605.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 605.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 605.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
+[2
 
 ] (./proposal.aux) ) 
 Here is how much of TeX's memory you used:
  911 strings out of 493304
  15828 string characters out of 6139871
- 73324 words of memory out of 5000000
+ 75324 words of memory out of 5000000
  4438 multiletter control sequences out of 15000+600000
  31491 words of font info for 65 fonts, out of 8000000 for 9000
  960 hyphenation exceptions out of 8191
- 31i,6n,23p,895b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,6n,22p,895b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
 </usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on proposal.pdf (1 page, 24071 bytes).
+Output written on proposal.pdf (2 pages, 25461 bytes).
 PDF statistics:
- 13 PDF objects out of 1000 (max. 8388607)
- 8 compressed objects within 1 object stream
+ 16 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
