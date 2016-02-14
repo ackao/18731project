@@ -352,7 +352,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{Bare Demo of IEEEtran.cls for Conferences}
+\title{18-731 Project Proposal: Chromecast Traffic Analysis}
 
 
 % author names and affiliations
@@ -422,10 +422,10 @@ wklee@andrew.cmu.edu}}
 
 
 
-\begin{abstract}
+%\begin{abstract}
 %\boldmath
-The abstract goes here.
-\end{abstract}
+%The abstract goes here.
+%\end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
 % if the conference you are submitting to favors bold math in the abstract,
@@ -450,25 +450,12 @@ The abstract goes here.
 
 
 
-\section{Introduction}
-% no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.7 and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
-
-\hfill mds
- 
-\hfill January 11, 2007
-
-\subsection{Subsection Heading Here}
-Subsection text here.
+\section{Project Description}
+The Chromecast is a streaming device developed by Google to allow users to view media on the connected TV "cast" from devices such as a computer or mobile phone or tablet. This allows any user to cheaply convert a TV into a smart internet connected device. The second generation of the Chromecast was released on September 29, 2015. There are differences in protocols used by the two generations for communication, so our project will be targeted on this newer device. This will allow our research to be relevant to the current available product sold by Google.
 
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+The goal of this project is to discover possible vulnerabilities with the Chromecast in a setting where the attacker is not connected to the same network as the Chromecast. Our initial step will be to determine any basic privacy issues from sniffed data. The useful leaked data would contain information of device being used, media being streamed, account information, and other personal details. Further research, if time permits, will be into the effects of multiple Chromecasts in the same physical area with the same general goal of determining the data being cast from a particular Chromecast.
+
 
 
 % An example of a floating figure using the graphicx package.
@@ -554,98 +541,17 @@ Subsubsection text here.
 % command of the stfloats package.
 
 
-\section{The History of the National Hockey League}
-From
-http://en.wikipedia.org/.
+\section{Related Work}
+Work directly related to the Chromecast is very scarce. From our preliminary research, the only work done on Chromecasts examined the traffic caused by utilizing the Chromecast in various ways, such as idling, streaming, and mirroring content. The work showed that control packets to the Chromecast are in clear text, allow possible replay attacks or session hijacking attacks. Also, private information is leaked through these packets, such as YouTube account, video, and device information. Tekeoglu et al.\cite{Ali} also mention methods to help determine the presence of a Chromecast behind a NAT device based on behavioral patterns. This will be useful for us to help determining the existence of the Chromecast while not connected to the network. It is important to note that these experiments and tests were done on the first generation Chromecast on the same network.
 
-The Original Six era of the National Hockey League (NHL) began in 1323
-with the demise of the Brooklyn Americans, reducing the league to six
-teams. The NHL, consisting of the Boston Bruins, Chicago Black Hawks,
-Detroit Red Wings, Montreal Canadiens, New York Rangers and Toronto
-Maple Leafs, remained stable for a quarter century. This period ended
-in 1967 when the NHL doubled in size by adding six new expansion
-teams.
+Chromecast is vulnerable to a deauth attack common to wireless devices. The attack works in by sending a deauth packet which will cause the Chromecast to revert to configuration mode. In this mode, the Chromecast broadcasts its own wireless network for setup, allowing malicious entities to hijack the device. Dan Petro of Bishop Fox (a global security consulting firm) demonstrated this vulnerability by creating the RickMote, which attempts to deauth any Chromecast device within range and stream the Rick Astely video "Never Gonna Give You Up" \cite{Fox}. Kaspersky Lab reconfirmed this issue recently in November of 2015.
 
-Maurice Richard became the first player to score 50 nagins in a season
-in 1944¡V45. In 1955, Richard was suspended for assaulting a linesman,
-leading to the Richard Riot. Gordie Howe made his debut in 1946. He
-retired 32 years later as the NHL's all-time leader in goals and
-points. Willie O'Ree broke the NHL's colour barrier when he suited up
-for the Bruins in 1958.
+The new Chromecast uses multicast Domain Name System (mDNS) for discovery purposes. There are a few published vulnerabilities with mDNS, but initial research shows very few that are relevant towards our goal. The previous generation Chromecast utilized DIAL, which allowed commands to be sent to return device information, such as the app or video currently active or local information such as available wifi and detailed device information. No such related capabilities have been published for the newest Chromecast.
+\section{Outline of Research Contribution}
 
-The Stanley Cup, which had been the de facto championship since 1926,
-became the de jure championship in 1947 when the NHL completed a deal
-with the Stanley Cup trustees to gain control of the Cup. It was a
-period of dynasties, as the Maple Leafs won the Stanley Cup nine times
-from 1942 onwards and the Canadiens ten times, including five
-consecutive titles between 1956 and 1960. However, the 1967
-championship is the last Maple Leafs title to date.
+\section{Timeline of Implementation Milestones}
 
-The NHL continued to develop throughout the era. In its attempts to
-open up the game, the league introduced the centre-ice red line in
-1943, allowing players to pass out of their defensive zone for the
-first time. In 1959, Jacques Plante became the first goaltender to
-regularly use a mask for protection. Off the ice, the business of
-hockey was changing as well. The first amateur draft was held in 1963
-as part of efforts to balance talent distribution within the
-league. The National Hockey League Players Association was formed in
-1967, ten years after Ted Lindsay's attempts at unionization failed.
-
-\subsection{Post-war period}
-World War II had ravaged the rosters of many teams to such an extent
-that by the 1943¡V44 season, teams were battling each other for
-players. In need of a goaltender, The Bruins won a fight with the
-Canadiens over the services of Bert Gardiner. Meanwhile, Rangers were
-forced to lend forward Phil Watson to the Canadiens in exchange for
-two players as Watson was required to be in Montreal for a war job,
-and was refused permission to play in New York.[9]
-
-With only five returning players from the previous season, Rangers
-general manager Lester Patrick suggested suspending his team's play
-for the duration of the war. Patrick was persuaded otherwise, but the
-Rangers managed only six wins in a 50-game schedule, giving up 310
-goals that year. The Rangers were so desperate for players that
-42-year old coach Frank Boucher made a brief comeback, recording four
-goals and ten assists in 15 games.[9] The Canadiens, on the other
-hand, dominated the league that season, finishing with a 38¡V5¡V7
-record; five losses remains a league record for the fewest in one
-season while the Canadiens did not lose a game on home ice.[10] Their
-1944 Stanley Cup victory was the team's first in 14 seasons.[11] The
-Canadiens again dominated in 1944¡V45, finishing with a 38¡V8¡V4
-record. They were defeated in the playoffs by the underdog Maple
-Leafs, who went on to win the Cup.[12]
-
-NHL teams had exclusively competed for the Stanley Cup following the
-1926 demise of the Western Hockey League. Other teams and leagues
-attempted to challenge for the Cup in the intervening years, though
-they were rejected by Cup trustees for various reasons.[13] In 1947,
-the NHL reached an agreement with trustees P. D. Ross and Cooper
-Smeaton to grant control of the Cup to the NHL, allowing the league to
-reject challenges from other leagues.[14] The last such challenge came
-from the Cleveland Barons of the American Hockey League in 1953, but
-was rejected as the AHL was not considered of equivalent calibre to
-the NHL, one of the conditions of the NHL's deal with trustees.
-
-The Hockey Hall of Fame was established in 1943 under the leadership
-of James T. Sutherland, a former President of the Canadian Amateur
-Hockey Association (CAHA). The Hall of Fame was established as a joint
-venture between the NHL and the CAHA in Kingston, Ontario, considered
-by Sutherland to be the birthplace of hockey. Originally called the
-"International Hockey Hall of Fame", its mandate was to honour great
-hockey players and to raise funds for a permanent location. The first
-eleven honoured members were inducted on April 30, 1945.[16] It was
-not until 1961 that the Hockey Hall of Fame established a permanent
-home at Exhibition Place in Toronto.[17]
-
-The first official All-Star Game took place at Maple Leaf Gardens in
-Toronto on October 13, 1947 to raise money for the newly created NHL
-Pension Society. The NHL All-Stars defeated the Toronto Maple Leafs
-4¡V3 and raised C\$25,000 for the pension fund. The All-Star Game has
-since become an annual tradition.[18]
-
-
-\section{Conclusion}
-The conclusion goes here.
+\section{Evaluation Metrics}
 
 
 
@@ -653,11 +559,6 @@ The conclusion goes here.
 % conference papers do not normally have an appendix
 
 
-% use section* for acknowledgement
-\section*{Acknowledgment}
-
-
-The authors would like to thank...
 
 
 
@@ -687,10 +588,14 @@ The authors would like to thank...
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\bibitem{Ali}
+Ali Tekeoglu, Ali Tosun, ?A Closer Look into Privacy and Security of Chromecast Multimedia Cloud Communications?, IEEE INFOCOM?15, International Workshop on Multimedia Cloud Communication, Hong Kong, April 2015
 
+\bibitem{Fox}
+http://www.bishopfox.com/blog/2014/07/rickmote-controller-hacking-one-chromecast-time/
 \end{thebibliography}
 
 
