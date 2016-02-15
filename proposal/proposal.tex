@@ -544,12 +544,24 @@ The goal of this project is to discover possible vulnerabilities with the Chrome
 \section{Related Work}
 Work directly related to the Chromecast is very scarce. From our preliminary research, the only work done on Chromecasts examined the traffic caused by utilizing the Chromecast in various ways, such as idling, streaming, and mirroring content. The work showed that control packets to the Chromecast are in clear text, allow possible replay attacks or session hijacking attacks. Also, private information is leaked through these packets, such as YouTube account, video, and device information. Tekeoglu et al.\cite{Ali} also mention methods to help determine the presence of a Chromecast behind a NAT device based on behavioral patterns. This will be useful for us to help determining the existence of the Chromecast while not connected to the network. It is important to note that these experiments and tests were done on the first generation Chromecast on the same network.
 
-Chromecast is vulnerable to a deauth attack common to wireless devices. The attack works in by sending a deauth packet which will cause the Chromecast to revert to configuration mode. In this mode, the Chromecast broadcasts its own wireless network for setup, allowing malicious entities to hijack the device. Dan Petro of Bishop Fox (a global security consulting firm) demonstrated this vulnerability by creating the RickMote, which attempts to deauth any Chromecast device within range and stream the Rick Astely video "Never Gonna Give You Up" \cite{Fox}. Kaspersky Lab reconfirmed this issue recently in November of 2015.
+Chromecast is vulnerable to a deauth attack common to wireless devices. The attack works in by sending a deauth packet which will cause the Chromecast to revert to configuration mode. In this mode, the Chromecast broadcasts its own wireless network for setup, allowing malicious entities to hijack the device. Dan Petro of Bishop Fox (a global security consulting firm) demonstrated this vulnerability by creating the RickMote, which attempts to deauth any Chromecast device within range and stream the Rick Astley video "Never Gonna Give You Up" \cite{Fox}. Kaspersky Lab reconfirmed this issue recently in November of 2015.
 
 The new Chromecast uses multicast Domain Name System (mDNS) for discovery purposes. There are a few published vulnerabilities with mDNS, but initial research shows very few that are relevant towards our goal. The previous generation Chromecast utilized DIAL, which allowed commands to be sent to return device information, such as the app or video currently active or local information such as available wifi and detailed device information. No such related capabilities have been published for the newest Chromecast.
 \section{Outline of Research Contribution}
+We intend to expand on Tekeoglu et al. and discover new vulnerabilities in the Chromecast to promote a stronger sense of security during development of such streaming devices. Tekeoglu et al. assumed an attacker on the same network as the Chromecast. We want to take this further by changing the threat model. The presence of a vulnerability in a streaming device in the general vicinity of the attacker would prove useful in improving the security of next-generation devices.
+
+We hope that our research will open the doors to a new class of vulnerabilities for streaming devices, not just specific to the Chromecast. With the presence of these vulnerabilities, we want to see future protocols developed and used for streaming devices finding a balance between ease-of-use and security. 
 
 \section{Timeline of Implementation Milestones}
+
+\begin{enumerate}
+	\item Feb 15 - Project Proposal
+	\item Feb 22 - Obtain materials, test known exploits \cite{Ali} \cite{Fox}
+	\item Mar 7 - Design and test channel sniffing using SDR
+	\item Mar 14 - Project Milestone, meet with course staff
+	\item Mar 28 - Start project paper, continue vulnerability assessment
+	\item Apr 25 - Project paper, working demo of vulnerabilities (if found)
+\end{enumerate}
 
 \section{Evaluation Metrics}
 We will evaluate the success of our project using standard machine learning evaluation metrics because we plan to attempt to differentiate different types of web traffic using a Naive Bayes classifier. As such, we will train the model on a training dataset and measure both precision and recall of a test set. For stronger analysis, we will perform crossvalidation by running our classifier multiple times on different training and test sets.
