@@ -31,7 +31,7 @@ function [output] = parse_data(filename, secs_interval)
     
     % Build matrix from CSV data
     output = zeros(max_length_window, s + 1);
-    b = 0:secs_interval:max_length_window/10.0;
+    b = 0:secs_interval:max_length_window*secs_interval;
     b = b';
     output(:,1) = b(1:end-1,:);
     
