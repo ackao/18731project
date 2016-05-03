@@ -1,21 +1,24 @@
 % Data files
-filenames1 = {'data/Phil_Image_Short_bw_100ms_cut.csv', 'data/Phil_Image_Long_bw_100ms_cut.csv', 'data/Phil_Moving_Short_bw_100ms_cut.csv', 'data/Phil_Moving_Long_bw_100ms_cut.csv'};
-filenames2 = {'data/Yellow_Image_Short_bw_100ms_cut.csv', 'data/Yellow_Image_Long_bw_100ms_cut.csv', 'data/Yellow_Moving_Short_bw_100ms_cut.csv', 'data/Yellow_Moving_Long_bw_100ms_cut.csv'};
+testset1_files = {'data/Phil_Image_Short_bw_100ms_cut.csv', 'data/Phil_Image_Long_bw_100ms_cut.csv', 'data/Phil_Moving_Short_bw_100ms_cut.csv', 'data/Phil_Moving_Long_bw_100ms_cut.csv'};
+database_files = {'data/Yellow_Image_Short_bw_100ms_cut.csv', 'data/Yellow_Image_Long_bw_100ms_cut.csv', 'data/Yellow_Moving_Short_bw_100ms_cut.csv', 'data/Yellow_Moving_Long_bw_100ms_cut.csv'};
+testset2_files = {'data/Yellow_Image_Short_2_cut.csv', 'data/Yellow_Image_Long_2_cut.csv', 'data/Yellow_Moving_Short_2_cut.csv', 'data/Yellow_Moving_Long_2_cut.csv'};
 
 % Parse data
-output1 = parse_many(filenames1, 0.1);
-output2 = parse_many(filenames2, 0.1);
+database = parse_many(database_files, 0.1);
+testset1 = parse_many(testset1_files, 0.1);
+testset2 = parse_many(testset2_files, 0.1);
 
 % Normalize
-output1 = norm_filt(output1);
-output2 = norm_filt(output2);
+database = norm_filt(database);
+testset1 = norm_filt(testset1);
+testset2 = norm_filt(testset2);
 
 % Uncomment below to plot the data
 %plot_data(output1, 4, 4);
 %plot_data(output2, 4, 4);
 
 % Perform linear and fft correlations
-[lin_corrs, fft_corrs] = correlate(output1, output2);
+[lin_corrs, fft_corrs] = correlate(testset1, testset2);
 
 % Run the correlations through our model
 model = model_stats(lin_corrs, fft_corrs);
