@@ -1,5 +1,11 @@
 function [output] = model_stats(lin_corrs, fft_corrs)
 
+    %% Function input
+    % lin_corrs: Matrix of linear correlations. Rows are test data, columns
+    % are database entries
+    % fft_corrs: Matrix of fft correlations. Rows are test data, columns
+    % are database entries
+
     assert(size(lin_corrs, 1)==size(fft_corrs, 1), 'Dataset size mismatch');
     assert(size(lin_corrs, 2)==size(fft_corrs, 2), 'Dataset size mismatch');
 

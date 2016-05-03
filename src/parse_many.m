@@ -1,4 +1,14 @@
 function [output] = parse_many(filenames, secs_interval)
+
+    %% Function input
+    % filenames: array of cut csv filenames to parse
+    % secs_interval: The interval of time of data captures
+    
+    %% Function output
+    % output: Matrix where first column is time and subsequent columns
+    % represent the data points of various captures
+    
+    %% Function implementation
     output = [];
     seconds_vector = zeros(1);
     for i = 1:size(filenames, 2)
