@@ -7,13 +7,12 @@ function [lin_corrs, fft_corrs] = correlate(testset, database)
     % output:
     
     %% Function implementation
-    % Ensure we have similar sized datasets
-    assert(size(testset, 2)==size(database, 2), 'Dataset size mismatch');
 
     testset_smaller = 1;
     
     % Get the number of videos we are correlating
-    s = size(testset, 2);
+    testset_size = size(testset, 2);
+    database_size = size(database, 2);
 
     % Figure out which input is 'smaller' so we can pad
     if size(testset, 1) > size(database, 1)
@@ -26,7 +25,7 @@ function [lin_corrs, fft_corrs] = correlate(testset, database)
     end
     
     % Pad with zeros to match size of larger input
-    B = zeros(size(larger));
+    B = zeros(size(larger, 1), size(smaller, 2));
     B(1:size(smaller,1),:) = smaller;
     
     lin_corrs = zeros(size(testset, 2)-1, size(database, 2)-1);
@@ -34,14 +33,14 @@ function [lin_corrs, fft_corrs] = correlate(testset, database)
     
     figure
 
-    for i = 2:s
+    for i = 2:testset_size
         highest_sum_so_far = 0;
         matching_index = 0;
         highest_corr_coef = 0;
         matching_corr_coef_index = 0;
-        for j = 2:s
+        for j = 2:database_size
             [acor, lag] = xcorr(testset(:,i), database(:,j));
-            subplot(s-1, s-1, (i-2)*(s-1)+(j-1)), plot(lag, acor)
+            subplot(testset_size-1, database_size-1, (i-2)*(testset_size-1)+(j-1)), plot(lag, acor)
             
             if max(acor) > highest_sum_so_far
                 highest_sum_so_far = max(acor);

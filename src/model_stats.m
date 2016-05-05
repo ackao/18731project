@@ -18,9 +18,6 @@ function [output] = model_stats(lin_corrs, fft_corrs)
     tmp_fft_corrs = zeros(size(fft_corrs));
     output = zeros(size(lin_corrs));
     
-    %lin_corrs = lin_corrs.^2;
-    %fft_corrs = fft_corrs.^2;
-    
     for i = 1:num_to_correlate
         tmp_lin_corrs(i, :) = lin_corrs(i, :) ./ sum(lin_corrs(i, :));
         tmp_fft_corrs(i, :) = fft_corrs(i, :) ./ sum(fft_corrs(i, :));
