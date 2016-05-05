@@ -40,7 +40,7 @@ function [lin_corrs, fft_corrs] = correlate(testset, database)
         matching_corr_coef_index = 0;
         for j = 2:database_size
             [acor, lag] = xcorr(testset(:,i), database(:,j));
-            subplot(testset_size-1, database_size-1, (i-2)*(testset_size-1)+(j-1)), plot(lag, acor)
+            subplot(testset_size-1, database_size-1, (i-2)*(database_size-1)+(j-1)), plot(lag, acor), axis([-5000 5000 0 0.35])
             
             if max(acor) > highest_sum_so_far
                 highest_sum_so_far = max(acor);
@@ -62,10 +62,10 @@ function [lin_corrs, fft_corrs] = correlate(testset, database)
             
             fft_corrs(i-1, j-1) = c(1, 2);
         end
-        X = sprintf('%d matches best with %d using xcorr.', i - 1, matching_index);
-        disp(X)
-        X = sprintf('%d matches best with %d using fft and corrcoef.', i - 1, matching_corr_coef_index);
-        disp(X)
+        %X = sprintf('%d matches best with %d using xcorr.', i - 1, matching_index);
+        %disp(X)
+        %X = sprintf('%d matches best with %d using fft and corrcoef.', i - 1, matching_corr_coef_index);
+        %disp(X)
     end
     
     

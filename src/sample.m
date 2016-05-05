@@ -1,6 +1,6 @@
 % Data files
-testset1_files = {'data/Phil_Image_Short_bw_100ms_cut.csv', 'data/Phil_Image_Long_bw_100ms_cut.csv', 'data/Phil_Moving_Short_bw_100ms_cut.csv', 'data/Phil_Moving_Long_bw_100ms_cut.csv'};
-database_files = {'data/Yellow_Image_Short_bw_100ms_cut.csv', 'data/Yellow_Image_Long_bw_100ms_cut.csv', 'data/Yellow_Moving_Short_bw_100ms_cut.csv', 'data/Yellow_Moving_Long_bw_100ms_cut.csv'};
+database_files = {'data/Phil_Image_Short_bw_100ms_cut.csv', 'data/Phil_Image_Long_bw_100ms_cut.csv', 'data/Phil_Moving_Short_bw_100ms_cut.csv', 'data/Phil_Moving_Long_bw_100ms_cut.csv'};
+testset1_files = {'data/Yellow_Image_Short_bw_100ms_cut.csv', 'data/Yellow_Image_Long_bw_100ms_cut.csv', 'data/Yellow_Moving_Short_bw_100ms_cut.csv', 'data/Yellow_Moving_Long_bw_100ms_cut.csv'};
 testset2_files = {'data/Yellow_Image_Short_2_cut.csv', 'data/Yellow_Image_Long_2_cut.csv', 'data/Yellow_Moving_Short_2_cut.csv', 'data/Yellow_Moving_Long_2_cut.csv'};
 testset3_files = {'data/Yellow_Image_Short_2_cut.csv'};
 
